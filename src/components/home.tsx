@@ -85,6 +85,11 @@ const Home = () => {
     setIsCartOpen(true);
   };
 
+  const handleCheckout = () => {
+    // Navigate to checkout page
+    window.location.href = "/checkout";
+  };
+
   const handleUpdateQuantity = (id: string, quantity: number) => {
     setCartItems(
       cartItems.map((item) => (item.id === id ? { ...item, quantity } : item)),
@@ -125,7 +130,7 @@ const Home = () => {
         items={cartItems}
         onUpdateQuantity={handleUpdateQuantity}
         onRemoveItem={handleRemoveItem}
-        onCheckout={() => console.log("Proceeding to checkout")}
+        onCheckout={handleCheckout}
       />
 
       {/* Auth Modal */}
